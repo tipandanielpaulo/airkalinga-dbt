@@ -1,5 +1,5 @@
 WITH import_weather_api AS (
-    SELECT DISTINCT * FROM {{source('weather','weather_api')}}
+    SELECT * FROM {{source('weather','weather_api')}}
 ),
 
 type_casts AS (
@@ -19,6 +19,9 @@ type_casts AS (
         CAST(upload_date AS TIMESTAMP) AS upload_date
     FROM
         import_weather_api
+    WHERE 
+        1=1
+    qualify ROW_NUMBER() OVER (PARTITION BY id ORDER BY upload_date DESC) = 1
 )
 
 SELECT * FROM type_casts
