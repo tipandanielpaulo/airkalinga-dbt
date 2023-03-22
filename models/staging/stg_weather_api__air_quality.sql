@@ -1,6 +1,5 @@
 WITH import_weather_api AS (
-    SELECT * FROM {{source('weather','air_quality_api')}}
-    qualify ROW_NUMBER() OVER (PARTITION BY id ORDER BY upload_date DESC) = 1
+    SELECT DISTINCT * FROM {{source('weather','air_quality_api')}}
 ),
 
 type_casts AS (
