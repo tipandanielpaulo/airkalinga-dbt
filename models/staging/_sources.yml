@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: weather
+    database: paulo-tipan
+    tables:
+      - name: weather_api
+      - name: air_quality_api

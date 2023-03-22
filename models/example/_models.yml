@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: air_quality
+    description: Air Quality data from weather api
