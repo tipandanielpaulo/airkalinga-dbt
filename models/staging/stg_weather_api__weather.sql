@@ -21,7 +21,7 @@ type_casts AS (
         import_weather_api
     WHERE 
         1=1
-    qualify ROW_NUMBER() OVER (PARTITION BY id ORDER BY upload_date DESC) = 1
+    qualify ROW_NUMBER() OVER (PARTITION BY read_date,region ORDER BY upload_date DESC) = 1
 )
 
 SELECT * FROM type_casts
