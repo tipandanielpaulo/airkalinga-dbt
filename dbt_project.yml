@@ -34,7 +34,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   Analytics:
     airkalinga:
-      project: airkalinga
+      +project: airkalinga
+      materialized: view
+      +schema: air_quality
+    staging:
+      +project: staging
       materialized: view
       +schema: air_quality
 
