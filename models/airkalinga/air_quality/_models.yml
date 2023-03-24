@@ -3,3 +3,49 @@ version: 2
 models:
   - name: air_quality
     description: Air Quality data from weather api
+    columns: 
+      - name: read_date
+        description: "Local time when the real time data was updated."
+      - name: city
+        description: "Location name"
+      - name: region
+        description: "Region or state of the location"
+      - name: country
+        description: "Location country"
+      - name: weather_condition
+        description: "Weather Condition"
+      - name: weather_icon
+        description: "Weather icon url"
+      - name: lat_long
+        description: "Latitude and longitude in decimal degree"
+      - name: temp_c
+        description: "Temperature in celsius"
+      - name: humidity
+        description: "Humidity as percentage"
+      - name: wind_kph
+        description: "Wind speed in kilometer per hour"
+      - name: pressure_mb
+        description: "Pressure in millibars"
+      - name: uv_val
+        description: "UV Index"
+      - name: co
+        description: "Carbon Monoxide (μg/m3)"
+      - name: no2
+        description: "Nitrogen dioxide (μg/m3)"
+      - name: o3
+        description: "Ozone (μg/m3)"
+      - name: so2
+        description: "Sulphur dioxide (μg/m3)"
+      - name: pm2_5
+        description: "PM2.5 (μg/m3)"
+      - name: pm10
+        description: "PM10 (μg/m3)"
+      - name: us_epa_index
+        description: >
+          US - EPA standard.
+          1 means Good
+          2 means Moderate
+          3 means Unhealthy for sensitive group
+          4 means Unhealthy
+          5 means Very Unhealthy
+          6 means Hazardous
