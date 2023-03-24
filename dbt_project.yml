@@ -32,13 +32,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  Analytics:
-    airkalinga:
-      +project: airkalinga
-      materialized: view
-      +schema: air_quality
-    staging:
-      +project: staging
-      materialized: view
-      +schema: air_quality
+  airkalinga:
+    my_schema:
+      +schema: airquality
+  staging:
+    my_schema:
+      +schema: airquality
+
+
 
