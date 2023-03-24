@@ -5,6 +5,7 @@ WITH import_weather_api AS (
 type_casts AS (
     SELECT
         CAST(read_date AS TIMESTAMP) AS read_date,
+        CAST(name AS STRING) AS city,
         CAST(region AS STRING) AS region,
         CAST(country AS STRING) AS country,
         CAST(latitude AS NUMERIC) AS latitude,
@@ -21,7 +22,7 @@ type_casts AS (
         import_weather_api
     WHERE 
         1=1
-    qualify ROW_NUMBER() OVER (PARTITION BY read_date,region ORDER BY upload_date DESC) = 1
+    qualify ROW_NUMBER() OVER (PARTITION BY read_date,city ORDER BY upload_date DESC) = 1
 )
 
 

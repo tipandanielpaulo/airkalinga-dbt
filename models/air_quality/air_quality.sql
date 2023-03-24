@@ -9,6 +9,7 @@ import_air_quality AS (
 join_tables AS (
     SELECT
         iw.read_date AS read_date,
+        iw.city AS city,
         iw.region AS region,
         iw.country AS country,
         iw.weather_condition AS weather_condition,
@@ -31,7 +32,7 @@ join_tables AS (
         import_weather iw
         LEFT JOIN import_air_quality ia
             ON iw.read_date = ia.read_date
-            AND iw.region = ia.region
+            AND iw.city = ia.city
 )
 
 SELECT * FROM join_tables
